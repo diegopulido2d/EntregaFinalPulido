@@ -1,0 +1,44 @@
+.navBar{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(233, 255, 219);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.255);
+}
+
+.navBarInner{
+    width: 1480px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBarLogoContainer{
+    display: flex;
+    align-items: center;
+}
+
+.navBarLogoContainer a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    max-height: 50px;
+}
+
+.navBarLogoContainer img{
+    max-height: 50px;
+}
+
+.navBarLogoContainer h2{
+    font-family: 'Raleway', sans-serif;
+    color: gray;
+    margin-left: 10px;
+    font-size: 30px;
+}
+.navBarLogoContainer h2 strong{
+    color: rgb(53, 53, 53);
+}
+
+.navBarContentContainer{
+    display: flex;
+}

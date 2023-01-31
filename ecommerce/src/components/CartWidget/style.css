@@ -1,0 +1,20 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.cartWidget a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cartWidget h3{
+    padding-top: 1px;
+    padding-left: 4px;
+    font-size: 28px;
+    color: black;
+}
+
+.cartWidget img{
+    max-height: 40px;
+}
