@@ -24,7 +24,7 @@ const ItemListContainerHome = () => {
             <ItemList>
                 {products.map((i) => (
                     <li key={i.id}>
-                        <Link to={`product/${i.id}`}>
+                        <Link to={`/product/${i.id}`}>
                             <Item 
                                 name = {i.title}
                                 price = {i.price}
