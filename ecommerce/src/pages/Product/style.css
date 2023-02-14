@@ -1,0 +1,30 @@
+.detail{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.detailContainer{
+    display: flex;
+    max-width: 1280px;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailContainer h2{
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+.detailContainer h5{
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.detailContainer img{
+    max-width: 500px;
+}
+
+.detailInfo{
+    padding: 0 30px;
+}
