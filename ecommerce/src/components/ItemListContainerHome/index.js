@@ -5,8 +5,6 @@ import UserGreeting from "../UserGreeting";
 import ItemList from "../ItemList";
 import Item from "../Item";
 import axios from 'axios';
-//import { fetchCopy } from "../../utils/getMock";
-//import { stock } from "../../utils/stock";
 
 const ItemListContainerHome = () => {
 
