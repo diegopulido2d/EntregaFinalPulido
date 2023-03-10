@@ -1,37 +1,70 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
+
 import "./style.css";
-import ItemList from "../ItemList";
 import Item from "../Item";
-import axios from 'axios';
+import { db } from "../../firebase/firebaseConfig";
+import { collection, query, getDocs, where } from "firebase/firestore"
 
 const Category = () => {
 
-    const [category, setCategory] = useState([])
+    const [category, setCategory] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     let {id} = useParams();
 
     useEffect(() => {
-        axios(`https://fakestoreapi.com/products/category/${id}`)
-        .then((res) => {setCategory(res.data); console.log(res.data)})
-        .catch((error) => {console.error(error)});
+
+        
+
+    setLoading(true);
+
+    const getProduct = async () => {
+
+      const q = query(collection(db, "products"), where("category", "==", id));
+      const querySnapshot = await getDocs(q);
+      
+      const docs = [];
+      querySnapshot.forEach((doc) =>{ 
+          docs.push({...doc.data(), id:doc.id})
+      });
+      
+      setCategory(docs);
+
+    }
+    getProduct();
+    setTimeout(() => {
+        setLoading(false);
+    }, 1000);
+        
     },[id]);
 
     return (
-        <div className="itemListContainer">
-            <ItemList>
-                {category.map((i) => (
-                    <li key={i.id}>
-                        <Link to={`/product/${i.id}`}>
-                            <Item 
-                                name = {i.title}
-                                price = {i.price}
-                                image = {i.image}
-                            />
-                        </Link>
-                    </li>
-                ))}
-            </ItemList>
-        </div>
+        <>
+          {loading ? (
+            <div className="itemListContainer">
+                <div className="spinner">
+                    <Spinner />
+                </div>
+            </div>
+          ) : (
+            <div className="itemListContainer">
+                <ul>
+                    {category.map((i) => (
+                        <li key={i.id}>
+                            <Link to={`/product/${i.id}`}>
+                                <Item 
+                                    name = {i.name}
+                                    price = {i.price}
+                                    image = {i.img}
+                                />
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>)}
+        </>
     )
 }
 

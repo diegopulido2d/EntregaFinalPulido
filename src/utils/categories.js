@@ -1,12 +1,17 @@
 export const cats = [
     {
         id: 1,
-        categoryName: "Vaporizadores",
-        categoryUrl: "jewelery"
+        categoryName: "Indoor",
+        categoryUrl: "indoor"
     },
     {
         id: 2,
-        categoryName: "Accesorios",
-        categoryUrl: "electronics"
+        categoryName: "Vapes",
+        categoryUrl: "vapes"
+    },
+    {
+        id: 3,
+        categoryName: "Accesories",
+        categoryUrl: "accesories"
     }
 ]
