@@ -77,7 +77,7 @@ const ItemDetailContainer = () => {
               </div>
             ) : (
               productDetail.map((data) => {
-                return <div className='detail' key={data.key}>
+                return <div className='detail' key={data.id}>
                         <div className="detailContainer">
                             <img src={data.img} alt=""></img>
                             <div className='detailInfo'>

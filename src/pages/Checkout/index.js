@@ -20,7 +20,7 @@ const Checkout = () => {
             const productTotal = item.price * item.quantity;
             finalTotal = finalTotal + productTotal;
 
-            return <div className="checkoutProductCard">
+            return <div className="checkoutProductCard" key={item.id}>
                     <div className="checkoutImageHolder">
                       <img src={item.img} alt=""/>
                     </div>
