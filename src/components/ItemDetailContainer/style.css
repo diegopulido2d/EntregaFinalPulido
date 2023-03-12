@@ -7,18 +7,19 @@
 .detailContainer{
     display: flex;
     max-width: 1280px;
+    margin-top: 80px;
     justify-content: center;
     align-items: center;
 }
 
 .detailContainer h2{
     font-size: 60px;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .detailContainer h5{
     font-size: 40px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .detailContainer img{
@@ -27,4 +28,43 @@
 
 .detailInfo{
     padding: 0 30px;
+}
+
+.purchaseContainer, .quantitySelector{
+    display: flex;
+    align-items: center;
+}
+
+.quantitySelector{
+    margin: 0 30px;
+}
+
+.cartButton{
+    padding: 20px 40px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cartButton:hover{
+    background-color: green;
+    color: white;
+    transition: 0.2s;
+}
+
+.quantitySelector button{
+    border: none;
+    background-color: transparent;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+.quantitySelector button:hover{
+    color: green;
+}
+
+.quantitySelector p{
+    margin: 0 20px;
+    font-size: 40px;
 }

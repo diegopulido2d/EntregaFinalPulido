@@ -16,8 +16,6 @@ const Category = () => {
 
     useEffect(() => {
 
-        
-
     setLoading(true);
 
     const getProduct = async () => {
@@ -49,7 +47,9 @@ const Category = () => {
                 </div>
             </div>
           ) : (
+            
             <div className="itemListContainer">
+                <h2>{id}</h2>
                 <ul>
                     {category.map((i) => (
                         <li key={i.id}>
@@ -63,7 +63,8 @@ const Category = () => {
                         </li>
                     ))}
                 </ul>
-            </div>)}
+            </div>
+            )}
         </>
     )
 }

@@ -7,6 +7,7 @@ import CartWidget from "../CartWidget";
 import { fetchCopy } from "../../utils/getMock";
 import { cats } from "../../utils/categories";
 
+
 const NavBar = () => {
 
     const [categories, setCategories] = useState([])
@@ -37,7 +38,7 @@ const NavBar = () => {
                         <Link to={`/category/${i.categoryUrl}`} key= {i.id}><li>{i.categoryName}</li></Link>
                     ))}
                     </NavBarCategoryList>
-                    <CartWidget notificationNumber={2} url="/" />
+                    <CartWidget />
                 </div>
             </div>
         </div>

@@ -1,24 +1,20 @@
 import React from 'react';
+import "./style.css";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 
 
 const Item = ({name, price, image}) => {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ width: 280 }}>
         <CardMedia
-            sx={{ height: 140 }}
+            sx={{ height: 350 }}
             image={image}
         />
         <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-            {name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-            {price} USD
-            </Typography>
+            <h5>{name}</h5>
+            <h6>${price},00</h6>
         </CardContent>
         </Card>
     )

@@ -1,0 +1,29 @@
+.FormContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px;
+}
+
+.Textfield {
+	width: 400px;
+}
+
+.btnASendAction {
+	background: green;
+	border: 1px solid green;
+	color: white;
+	height: 54px;
+	width: 400px;
+	font-size: 18px;
+	margin: 10px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.btnASendAction:hover {
+	background: white;
+	color: green;
+	transition: 0.3s;
+}
