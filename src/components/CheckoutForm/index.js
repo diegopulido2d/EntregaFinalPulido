@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./style.css";
 
 // Firebase
@@ -7,28 +7,29 @@ import { collection, addDoc } from "firebase/firestore";
 
 import MessageSuccess from "../MessageSuccess/MessageSuccess";
 import TextField from "@mui/material/TextField";
-
+import { ItemsContext } from "../../context/ItemsContext";
 
 
 const initialState = {
   name: "",
   lastName: "",
-  city: "",
+  email: "",
 };
 
 const CheckoutForm = () => {
   const [values, setValues] = useState(initialState);
   const [purchaseID, setPurchaseID] = useState("");
+  const {items} = useContext(ItemsContext);
 
   const handleOnChange = (e) => {
     const { value, name } = e.target;
-    setValues({ ...values, [name]: value });
+    setValues({ ...values, [name]: value, order: items });
   };
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     // Add a new document with a generated id.
-    const docRef = await addDoc(collection(db, "purchases"), {
+    const docRef = await addDoc(collection(db, "orders"), {
       values,
     });
     // console.log("Document written with ID: ", docRef.id);
@@ -54,13 +55,13 @@ const CheckoutForm = () => {
           onChange={handleOnChange}
         />
         <TextField
-          placeholder="City"
+          placeholder="E-mail"
           style={{ margin: 10, width: 400 }}
-          name="city"
-          value={values.city}
+          name="email"
+          value={values.email}
           onChange={handleOnChange}
         />
-        <button className="btnASendAction">Send</button>
+        <button className="btnASendAction">Buy Now</button>
       </form>
       {purchaseID ? <MessageSuccess purchaseID={purchaseID} /> : null}
     </div>
